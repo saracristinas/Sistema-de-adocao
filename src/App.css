@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+  /* text-shadow: #000 1px 1px; */
+  font-family: Helvetica;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #687351; /*ATENCAO!! EU ESTOU USANDO O BACKGROUND POIS A IMAGEM ESTA CORTADA!! */
+  background-image: url(assets/Login.svg);
+  background-size: contain; /* Faz a imagem caber sem cortar */
+  background-size: 83%; /* Especifica o tamanho do formulario direito e esquerdo */
+  background-repeat: no-repeat; /* Evita repetir */
+  background-position: center; /* Centraliza */
+}
