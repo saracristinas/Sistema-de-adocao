@@ -1,5 +1,6 @@
 import { FaUser, FaLock } from "react-icons/fa";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";  // Importa o useNavigate
 import "./Login.css";
 
 import meninaImg from '../../assets/menina-e-animais.webp';
@@ -9,10 +10,15 @@ import pc from '../../assets/pc.png';
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();  // Instancia o useNavigate
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    localStorage.setItem("nome", "Sara Sales"); // substituir pelo valor real, vindo de um banco ou formulário
     alert(`Enviando os dados: Email: ${username} - Senha: ${password}`);
+
+    // Após o login, redireciona para a tela de home
+    navigate("/home");
   };
 
   return (

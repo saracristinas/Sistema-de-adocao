@@ -12,13 +12,21 @@ const Cadastro = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-
         
         if (password !== confirmPassword) {
             alert("As senhas não coincidem");
-        } else {
+          } else {
+            // Salva os dados no localStorage
+            localStorage.setItem("username", email);      // Mantém o e-mail
+            localStorage.setItem("nome", username);       // Salva o nome real
+            localStorage.setItem("telefone", phone);      // Se quiser usar depois
+          
             alert("Cadastro realizado com sucesso!");
-        }
+          
+            // Redireciona para login (opcional)
+            window.location.href = "/home";
+          }
+          
     };
 
     return (

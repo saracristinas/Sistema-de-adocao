@@ -40,7 +40,7 @@ function Header({ username, onLogout }) {
   return (
     <header className="header">
       <div className="header-left">
-        <p>Olá, {username}</p>
+        <p>Olá, {username} || "Bem-vindo!!"</p>
       </div>
       <div className="header-right">
         <button onClick={onLogout}>Sair</button>
