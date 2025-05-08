@@ -12,8 +12,8 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #687351; /*ATENCAO!! EU ESTOU USANDO O BACKGROUND POIS A IMAGEM ESTA CORTADA!! */
-  background-image: url(assets/Login.svg);
+  background-color: #576043; /*ATENCAO!! EU ESTOU USANDO O BACKGROUND POIS A IMAGEM ESTA CORTADA!! */
+  /* background-image: url(assets/Login-transparente.svg); */
   background-size: contain; /* Faz a imagem caber sem cortar */
   background-size: 83%; /* Especifica o tamanho do formulario direito e esquerdo */
   background-repeat: no-repeat; /* Evita repetir */

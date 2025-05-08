@@ -1,4 +1,4 @@
-## 💻 Projeto: Tela de Login com React v1
+## 💻 Projeto: Tela de Login com React v2
 
 ### 🧾 Descrição Geral
 
@@ -50,6 +50,19 @@ Contém todos os **estilos específicos da tela de login**, como:
 * Estilização dos inputs, botões e links
 * Ícones posicionados corretamente
 * Responsividade e aparência agradável
+
+Além disso, agora o Login.css importa os seguintes arquivos de estilo para uma melhor organização:
+
+/components/Login/styles/layout.css: Estilos gerais de layout para a tela de login.
+
+/components/Login/styles/form.css: Estilos do formulário de login, como a estilização dos inputs e botões.
+
+/components/Login/styles/imagem.css: Estilos para a área da imagem, incluindo o layout e o posicionamento das imagens.
+
+/components/Login/styles/textos.css: Estilos relacionados ao texto na tela de login, como fontes, tamanhos e cores.
+
+/components/Login/styles/responsivo.css: Estilos responsivos que garantem a boa exibição da tela em diferentes tamanhos de dispositivos.
+
 
 ---
 
