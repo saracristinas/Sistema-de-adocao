@@ -1,4 +1,4 @@
-## 💻 Projeto: Tela de Login com React v1
+## 💻 Projeto: Tela de Login com React v2
 
 ### 🧾 Descrição Geral
 
