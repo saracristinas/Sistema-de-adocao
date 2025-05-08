@@ -1,0 +1,145 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #687351;
+  }
+  
+  .container {
+    padding: 0;
+    width: 90%;
+    max-width: 1600px;
+    max-height: 90vh;
+    margin: 5vh auto;
+    background-color: #9ba17f;
+    border-radius: 30px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-y: auto; 
+    scroll-behavior: smooth;
+    scrollbar-width: thin; 
+  }
+  
+  
+  .container::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .container::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+  
+  
+  /* Lado esquerdo do container */
+  .container::before {
+    content: '';
+    flex: 1;
+    background-color: #9ba17f;
+     
+  }
+  
+  form {
+    flex: 1 1 100%;
+    background-color: #e8e4db;
+    padding: 40px 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    box-sizing: border-box;
+    min-height: 400px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #000;
+  }
+  
+  .input-field {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 0.3rem !important; 
+    margin-top: 1.9rem !important;
+  }
+  
+  
+  
+  .input-field input {
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+    border-radius: 25px;
+    border: none;
+    font-size: 1rem;
+    background-color: #fff;
+    outline: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    
+  }
+  
+  .input-field .icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    color: #888;
+    font-size: 1rem;
+  }
+  
+  .button-field {
+    margin-top: 1.5rem;
+    display: flex;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .button-field button {
+    width: 100%;
+    padding: 12px;
+    background-color: #3f51b5;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button-field button:hover {
+    background-color: #9ba17f;
+  }
+  
+  .login-link {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  .login-link a {
+    color: #3f51b5;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .login-link a:hover {
+    text-decoration: underline;
+  }
+  
+/* Responsividade */
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+  }
+
+  form {
+    flex: 1;
+    border-top-right-radius: 20px;
+  }
+}

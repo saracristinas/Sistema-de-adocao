@@ -1,13 +1,22 @@
-import './App.css'
-import Login from './Components/Login/Login';
+import "./Components/Login/Login.css";
+import "./Components/Cadastro/Cadastro.css";
+import "./Components/Home/Home.css";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import Login from "./Components/Login/Login";
+import Cadastro from "./Components/Cadastro/Cadastro";
+import Home from "./Components/Home/Home";
 
 function App() {
-
   return (
-    <div className='App'>
-      <Login />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/cadastro" element={<Cadastro />} />
+        <Route path="/home" element={<Home username="João" onLogout={() => alert("Logout realizado!")} />} />
+      </Routes>
+    </Router>
   );
 }
 
-export default App
+export default App;
