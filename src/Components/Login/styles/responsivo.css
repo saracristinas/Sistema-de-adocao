@@ -1,0 +1,22 @@
+/* responsivo.css */
+
+/* Responsividade para dispositivos com largura de tela menor que 600px */
+@media (max-width: 600px) {
+    .img-menina, .img-patinha, .img-pc {
+      max-width: 80%; /* Reduz a largura das imagens */
+      max-height: 80%; /* Reduz a altura das imagens */
+    }
+  
+    .image-container {
+      padding: 10px; /* Reduz o espaçamento interno */
+    }
+  
+    .form-container {
+      width: 100%; /* Faz com que o formulário ocupe toda a largura disponível */
+      padding: 20px; /* Reduz o espaçamento interno */
+    }
+    .login-wrapper {
+      flex-direction: column;
+    }
+  }
+  

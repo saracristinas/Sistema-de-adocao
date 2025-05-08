@@ -1,0 +1,22 @@
+/* layout.css */
+
+/* Layout principal que engloba a imagem e o formulário */
+.login-wrapper {
+    display: flex; /* Usando Flexbox para organização */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Centraliza os itens verticalmente */
+    min-height: 100vh; /* A altura mínima é 100% da altura da tela */
+    background: url('/assets/bg-blur.jpg') no-repeat center center/cover; /* Define o fundo com imagem */
+    backdrop-filter: blur(10px); /* Efeito de desfoque no fundo */
+    padding: 20px; /* Espaçamento interno */
+    flex-wrap: wrap; /* Faz com que os itens possam quebrar linha */
+    gap: 10px; /* Espaçamento entre os elementos */
+  }
+  
+  /* Estilo da parte do formulário */
+  .right-side , .left-side {
+    flex: 1; /* Faz com que essa parte ocupe o máximo de espaço possível */
+    display: flex; /* Flexbox para organizar o conteúdo */
+    justify-content: center; /* Alinha o conteúdo horizontalmente */
+  }
+  
