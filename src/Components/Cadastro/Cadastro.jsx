@@ -1,7 +1,7 @@
 // Cadastro.jsx
 // Componente de Cadastro       
 import { FaUser, FaEnvelope, FaLock, FaPhoneAlt, FaIdCard } from "react-icons/fa";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Cadastro.css";
 import meninaImg from "../../assets/menina-e-animais.webp";
@@ -46,9 +46,13 @@ const Cadastro = () => {
     };
 
     return (
-        <div className="container">
-            <form onSubmit={handleSubmit}>
-                <h1>Cadastro</h1>
+        <div className="background-image">
+            {/* Tudo agora está dentro de um único contêiner */}
+
+            <form className="container" onSubmit={handleSubmit}>
+                <h1>Cadastre-se!</h1>
+                <h3>Os pets estão esperando</h3>
+
                 <div className="input-field">
                     <input
                         type="text"
@@ -58,16 +62,17 @@ const Cadastro = () => {
                     />
                     <FaUser className="icon" />
                 </div>
-<div className="input-field">
-    <input
-        type="text"
-        placeholder="CPF"
-        required
-        onChange={(e) => setCpf(e.target.value)}
-    />
-    <FaIdCard className="icon" />
-</div>
-                
+
+                <div className="input-field">
+                    <input
+                        type="text"
+                        placeholder="CPF"
+                        required
+                        onChange={(e) => setCpf(e.target.value)}
+                    />
+                    <FaIdCard className="icon" />
+                </div>
+
                 <div className="input-field">
                     <input
                         type="email"
