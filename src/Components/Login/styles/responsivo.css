@@ -1,9 +1,0 @@
-/* responsivo.css */
-
-/* Responsividade para dispositivos com largura de tela menor que 600px */
-/* Responsivo */
-
-.form-container {
-  width: 100%; /* Faz com que o formulário ocupe toda a largura disponível */
-  padding: 0px; /* Reduz o espaçamento interno */
-}

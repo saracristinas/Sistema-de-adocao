@@ -1,19 +1,7 @@
-.form-container {
-  width: 400px;
-  background-color: rgba(230, 224, 212, 0.9);
-  backdrop-filter: blur(10px);
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 .form-container h1 {
   text-align: center;
   font-size: 30px;
-  color: black;
+  color: rgb(234, 28, 28);
 }
 
 .input-field {
@@ -50,7 +38,7 @@
   display: flex;
   justify-content: space-between;
   font-size: 14.5px;
-  margin: -10px 0 20px;
+  margin: 10px 0 20px;
 }
 
 .recall-forget label {
@@ -73,7 +61,7 @@
 .form-container button {
   width: 100%;
   height: 45px;
-  background: #fff;
+  background: #1d5aa0;
   border: none;
   border-radius: 40px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
