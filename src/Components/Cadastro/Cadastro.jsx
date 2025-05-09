@@ -66,9 +66,13 @@ const Cadastro = () => {
         }
     };
     return (
-        <div className="container">
-            <form onSubmit={handleSubmit}>
-                <h1>Cadastro</h1>
+        <div className="background-image">
+            {/* Tudo agora está dentro de um único contêiner */}
+
+            <form className="container" onSubmit={handleSubmit}>
+                <h1>Cadastre-se!</h1>
+                <h3>Os pets estão esperando</h3>
+
                 <div className="input-field">
                     <input
                         type="text"
