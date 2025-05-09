@@ -4,9 +4,9 @@ import { FaUser, FaEnvelope, FaLock, FaPhoneAlt, FaIdCard } from "react-icons/fa
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Cadastro.css";
-import meninaImg from "../../assets/menina-e-animais.webp";
+import gatinhoImg from "../../assets/gatinho-login.svg";
 import patinhas from "../../assets/patinhas.webp";
-import pc from "../../assets/pc.png";
+
 
 const Cadastro = () => {
     const [cpf, setCpf] = useState("");
@@ -47,9 +47,12 @@ const Cadastro = () => {
 
     return (
         <div className="background-image">
-            {/* Tudo agora está dentro de um único contêiner */}
-
+            
+            <div className="gatinho-wrapper">
+                <img src={gatinhoImg} alt="Gatinho" className="gatinho-topo" />
+            </div>
             <form className="container" onSubmit={handleSubmit}>
+                
                 <h1>Cadastre-se!</h1>
                 <h3>Os pets estão esperando</h3>
 

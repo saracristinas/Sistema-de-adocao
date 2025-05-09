@@ -8,8 +8,21 @@
   padding: 20px;
   gap: 10px;
   overflow-y: auto;
+  position: relative;
 }
 
+.gatinho-wrapper {
+  position: absolute;
+  top: 40px; /* ou ajuste como quiser */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+}
+
+.gatinho-topo {
+  width: 90px;
+}
 body, html {
   margin: 0;
   padding: 0;
@@ -34,6 +47,11 @@ form {
   overflow-y: auto;
 }
 
+
+form.container {
+  position: relative;
+  margin-top: 80px; /* deixa espaço para o gatinho acima */
+}
 
 /* Scroll personalizado no formulário */
 form::-webkit-scrollbar {
