@@ -3,8 +3,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom"; // Importa o useNavigate
 import "./Login.css";
 
-import gatinho from "../../assets/gatinho-login.svg";
-import pc from "../../assets/pc.png";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -23,14 +21,10 @@ const Login = () => {
   return (
     <div className="login-wrapper background-image">
       <div className="right-side">
-      <div className="gato-wrapper">
-      <img src={gatinho} alt="gatinho" className="img-gato" />
-    </div>
         <div className="form-container">
-  
           <form onSubmit={handleSubmit}>
             <h1>Login</h1>
-  
+
             <div className="input-field">
               <input
                 type="email"
@@ -40,7 +34,7 @@ const Login = () => {
               />
               <FaUser className="icon" />
             </div>
-  
+
             <div className="input-field">
               <input
                 type="password"
@@ -50,7 +44,7 @@ const Login = () => {
               />
               <FaLock className="icon" />
             </div>
-  
+
             <div className="recall-forget">
               <label>
                 <input type="checkbox" />
@@ -58,9 +52,9 @@ const Login = () => {
               </label>
               <a href="#">Esqueceu sua senha?</a>
             </div>
-  
+
             <button>Entrar</button>
-  
+
             <div className="signup-link">
               <p>
                 Não tem uma conta? <a href="/cadastro">Cadastrar</a>
@@ -71,7 +65,6 @@ const Login = () => {
       </div>
     </div>
   );
-  
 };
 
 export default Login;
