@@ -3,8 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom"; // Importa o useNavigate
 import "./Login.css";
 
-import meninaImg from "../../assets/menina-e-animais.webp";
-import patinhas from "../../assets/patinhas.webp";
+import gatinho from "../../assets/gatinho-login.svg";
 import pc from "../../assets/pc.png";
 
 const Login = () => {
@@ -27,16 +26,10 @@ const Login = () => {
         <div className="left-side">
           <div className="image-container">
             <img
-              src={meninaImg}
-              alt="Menina com animais"
+              src={gatinho}
+              alt="gatinho na tela de login"
               className="img-menina"
             />
-            <img
-              src={patinhas}
-              alt="patinhas de cachorro"
-              className="img-patinha"
-            />
-            <img src={pc} alt="notebook" className="img-pc" />
           </div>
         </div>
       </div>

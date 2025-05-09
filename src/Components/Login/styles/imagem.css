@@ -4,7 +4,7 @@
 .image-container {
     width: 400px; /* Largura do container de imagens */
     height: 435px; /* Altura do container de imagens */
-    background-color: #9BA17F; /* Cor de fundo */
+    background-color: #4b382b; /* Cor de fundo */
     backdrop-filter: blur(8px); /* Efeito de desfoque no fundo */
     border-radius: 20px; /* Bordas arredondadas */
     overflow: hidden; /* Esconde o conteúdo que sai da área do container */
