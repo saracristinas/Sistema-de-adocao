@@ -21,24 +21,16 @@ const Login = () => {
   };
 
   return (
-    <div className="background-image"> {/* Aqui aplicamos a classe global */}
-      <div className="login-wrapper background-image">
-        <div className="left-side">
-          <div className="image-container">
-            <img
-              src={gatinho}
-              alt="gatinho na tela de login"
-              className="img-menina"
-            />
-          </div>
-        </div>
-      </div>
-
-
+    <div className="login-wrapper background-image">
       <div className="right-side">
+      <div className="gato-wrapper">
+      <img src={gatinho} alt="gatinho" className="img-gato" />
+    </div>
         <div className="form-container">
+  
           <form onSubmit={handleSubmit}>
             <h1>Login</h1>
+  
             <div className="input-field">
               <input
                 type="email"
@@ -48,7 +40,7 @@ const Login = () => {
               />
               <FaUser className="icon" />
             </div>
-
+  
             <div className="input-field">
               <input
                 type="password"
@@ -58,7 +50,7 @@ const Login = () => {
               />
               <FaLock className="icon" />
             </div>
-
+  
             <div className="recall-forget">
               <label>
                 <input type="checkbox" />
@@ -66,9 +58,9 @@ const Login = () => {
               </label>
               <a href="#">Esqueceu sua senha?</a>
             </div>
-
+  
             <button>Entrar</button>
-
+  
             <div className="signup-link">
               <p>
                 Não tem uma conta? <a href="/cadastro">Cadastrar</a>
@@ -79,6 +71,7 @@ const Login = () => {
       </div>
     </div>
   );
+  
 };
 
 export default Login;
