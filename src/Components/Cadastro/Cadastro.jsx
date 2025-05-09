@@ -1,11 +1,15 @@
 // Cadastro.jsx
 // Componente de Cadastro       
-import { FaUser, FaEnvelope, FaLock, FaPhoneAlt } from "react-icons/fa";
+import { FaUser, FaEnvelope, FaLock, FaPhoneAlt, FaIdCard } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Cadastro.css";
+import meninaImg from "../../assets/menina-e-animais.webp";
+import patinhas from "../../assets/patinhas.webp";
+import pc from "../../assets/pc.png";
 
 const Cadastro = () => {
+    const [cpf, setCpf] = useState("");
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -29,6 +33,7 @@ const Cadastro = () => {
             const formattedUsername = capitalizeFirstLetter(username);
             
             // Salva os dados no localStorage
+            localStorage.setItem("cpf", cpf);
             localStorage.setItem("username", email);
             localStorage.setItem("nome", formattedUsername);
             localStorage.setItem("telefone", phone);
@@ -53,7 +58,16 @@ const Cadastro = () => {
                     />
                     <FaUser className="icon" />
                 </div>
-
+<div className="input-field">
+    <input
+        type="text"
+        placeholder="CPF"
+        required
+        onChange={(e) => setCpf(e.target.value)}
+    />
+    <FaIdCard className="icon" />
+</div>
+                
                 <div className="input-field">
                     <input
                         type="email"
