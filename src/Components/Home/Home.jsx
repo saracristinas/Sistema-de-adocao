@@ -1,18 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Home.css";
-import { Link } from 'react-router-dom'; // Importe o Link corretamente
+import { Link } from 'react-router-dom';
 
+export default function Home({ onLogout }) {
+  const [username, setUsername] = useState("");
 
-export default function Home({ username, onLogout }) {
+  useEffect(() => {
+    const savedName = localStorage.getItem("username");
+    if (savedName) {
+      setUsername(savedName);
+    }
+  }, []);
+
   return (
     <div className="home-container">
       <Header username={username} onLogout={onLogout} />
 
       <main className="content">
         <h3>Pronto para encontrar seu novo amigo de quatro patas?</h3>
-        <p></p>
 
-        {/* Cards de Pets */}
         <div className="card-grid">
           <div className="pet-card">
             <img src="/imagens/pet1.jpg" alt="Pet 1" />
@@ -29,7 +35,6 @@ export default function Home({ username, onLogout }) {
             <h3>Bela</h3>
             <p>Gata, 1 ano, carinhosa</p>
           </div>
-          {/* Adicionar mais cards conforme necessário */}
         </div>
       </main>
 
@@ -54,18 +59,17 @@ function Header({ username, onLogout }) {
       </div>
       <div className="header-right">
         {username ? (
-          <button onClick={onLogout}>Sair</button>  /*{ Quando o usuário está logado }*/
+          <button onClick={onLogout}>Sair</button>
         ) : (
           <>
-            <Link to="/login" className="header-link">Login</Link>  {/* Navega para /login */}
-            <Link to="/cadastro" className="header-link">Cadastrar</Link>  {/* Navega para /cadastro */}
+            <Link to="/login" className="header-link">Login</Link>
+            <Link to="/cadastro" className="header-link">Cadastrar</Link>
           </>
         )}
       </div>
     </header>
   );
 }
-
 
 function Footer() {
   return (
