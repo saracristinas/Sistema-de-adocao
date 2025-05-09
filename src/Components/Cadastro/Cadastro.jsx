@@ -1,3 +1,5 @@
+// Cadastro.jsx
+// Componente de Cadastro       
 import { FaUser, FaEnvelope, FaLock, FaPhoneAlt } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
