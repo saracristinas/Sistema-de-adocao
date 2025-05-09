@@ -1,5 +1,7 @@
 import React from "react";
 import "./Home.css";
+import { Link } from 'react-router-dom'; // Importe o Link corretamente
+
 
 export default function Home({ username, onLogout }) {
   return (
@@ -37,17 +39,33 @@ export default function Home({ username, onLogout }) {
 }
 
 function Header({ username, onLogout }) {
+  const capitalizeName = (name) => {
+    return name.replace(/\b\w/g, (char) => char.toUpperCase());
+  };
+
+  const saudacao = username
+    ? `Olá, ${capitalizeName(username)}!`
+    : "Olá, visitante! Bem-vindo à nossa plataforma 💖";
+
   return (
     <header className="header">
       <div className="header-left">
-        <p>Olá, {username} || "Bem-vindo!!"</p>
+        <p>{saudacao}</p>
       </div>
       <div className="header-right">
-        <button onClick={onLogout}>Sair</button>
+        {username ? (
+          <button onClick={onLogout}>Sair</button>  /*{ Quando o usuário está logado }*/
+        ) : (
+          <>
+            <Link to="/login" className="header-link">Login</Link>  {/* Navega para /login */}
+            <Link to="/cadastro" className="header-link">Cadastrar</Link>  {/* Navega para /cadastro */}
+          </>
+        )}
       </div>
     </header>
   );
 }
+
 
 function Footer() {
   return (

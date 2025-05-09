@@ -1,19 +1,20 @@
 /* layout.css */
 
 /* Layout principal que engloba a imagem e o formulário */
-.login-wrapper {
+.login-wrapper , .right-side {
     display: flex; /* Usando Flexbox para organização */
     justify-content: center; /* Centraliza os itens horizontalmente */
+    flex-direction: row; /* Garante lado a lado */
     align-items: center; /* Centraliza os itens verticalmente */
     min-height: 100vh; /* A altura mínima é 100% da altura da tela */
-    background: url('/assets/bg-blur.jpg') no-repeat center center/cover; /* Define o fundo com imagem */
-    backdrop-filter: blur(10px); /* Efeito de desfoque no fundo */
+    background-image: url('/src/assets/Fundo-de-tela.svg');
+    background-color: #687351;
     padding: 20px; /* Espaçamento interno */
-    flex-wrap: wrap; /* Faz com que os itens possam quebrar linha */
+    flex-wrap: nowrap; /* Impede quebra de linha */
     gap: 10px; /* Espaçamento entre os elementos */
   }
   
-  /* Estilo da parte do formulário */
+  /* Estilo da parte do formulário (Nao tem uma conta?) */
   .right-side , .left-side {
     flex: 1; /* Faz com que essa parte ocupe o máximo de espaço possível */
     display: flex; /* Flexbox para organizar o conteúdo */

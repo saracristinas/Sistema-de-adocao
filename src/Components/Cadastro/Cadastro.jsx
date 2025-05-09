@@ -1,7 +1,7 @@
 import { FaUser, FaEnvelope, FaLock, FaPhoneAlt } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./Cadastro.css";
-import { Link } from "react-router-dom";
 
 const Cadastro = () => {
     const [username, setUsername] = useState("");
@@ -9,31 +9,39 @@ const Cadastro = () => {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [phone, setPhone] = useState("");
+    const navigate = useNavigate();
 
+    // Função que formata a primeira letra maiúscula do nome
+    const capitalizeFirstLetter = (str) => {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    };
+
+    // Função que lida com o envio do formulário
     const handleSubmit = (event) => {
         event.preventDefault();
-        
+
         if (password !== confirmPassword) {
             alert("As senhas não coincidem");
-          } else {
+        } else {
+            // Formata o nome de usuário para a primeira letra maiúscula
+            const formattedUsername = capitalizeFirstLetter(username);
+            
             // Salva os dados no localStorage
-            localStorage.setItem("username", email);      // Mantém o e-mail
-            localStorage.setItem("nome", username);       // Salva o nome real
-            localStorage.setItem("telefone", phone);      // Se quiser usar depois
-          
+            localStorage.setItem("username", email);
+            localStorage.setItem("nome", formattedUsername);
+            localStorage.setItem("telefone", phone);
+
             alert("Cadastro realizado com sucesso!");
-          
-            // Redireciona para login (opcional)
-            window.location.href = "/home";
-          }
-          
+
+            // Redireciona para a página inicial após cadastro
+            navigate("/home");
+        }
     };
 
     return (
         <div className="container">
             <form onSubmit={handleSubmit}>
                 <h1>Cadastro</h1>
-
                 <div className="input-field">
                     <input
                         type="text"
@@ -86,7 +94,6 @@ const Cadastro = () => {
 
                 <div className="button-field">
                     <button type="submit">Cadastrar</button>
-                
                 </div>
 
                 <div className="login-link">

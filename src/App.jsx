@@ -1,6 +1,7 @@
 import "./Components/Login/Login.css";
 import "./Components/Cadastro/Cadastro.css";
 import "./Components/Home/Home.css";
+
 import {
   BrowserRouter as Router,
   Routes,
