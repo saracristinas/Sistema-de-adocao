@@ -8,8 +8,10 @@ import {
 } from "react-icons/fa";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios"; // Importando o axios
+
 import "./Cadastro.css";
+import gatinhoImg from "../../assets/gatinho-login.svg";
+import patinhas from "../../assets/patinhas.webp";
 
 const Cadastro = () => {
   const [cpf, setCpf] = useState("");
@@ -25,10 +27,10 @@ const Cadastro = () => {
     return str.charAt(0).toUpperCase() + str.slice(1);
   };
 
+  // Função que lida com o envio do formulário
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Validação das senhas
     if (password !== confirmPassword) {
       alert("As senhas não coincidem");
       return;
@@ -55,27 +57,28 @@ const Cadastro = () => {
       );
 
       if (response.status === 201 || response.status === 200) {
-        // A resposta agora contém os dados do usuário, incluindo o ID e o nome
         const usuarioCriado = response.data;
 
-        // Exibe o nome e o ID do usuário no alerta
         alert(
           `Cadastro realizado com sucesso! Nome: ${usuarioCriado.name}, ID: ${usuarioCriado.id}`
         );
 
-        localStorage.setItem("username", response.data.name);
+        // Salva o nome do usuário no localStorage para ser usado na Home
+        localStorage.setItem("username", usuarioCriado.name);
 
-        navigate("/home"); // Redireciona para a página inicial após cadastro
+        navigate("/home");
       }
     } catch (error) {
       console.error("Erro ao cadastrar:", error);
       alert("Erro ao cadastrar usuário. Verifique os dados e tente novamente.");
     }
   };
+
   return (
     <div className="background-image">
-      {/* Tudo agora está dentro de um único contêiner */}
-      
+      <div className="gatinho-wrapper">
+        
+      </div>
       <form className="container" onSubmit={handleSubmit}>
         <h1>Cadastre-se!</h1>
         <h3>Os pets estão esperando</h3>
