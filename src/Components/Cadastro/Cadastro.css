@@ -11,18 +11,8 @@
   position: relative;
 }
 
-.gatinho-wrapper {
-  position: absolute;
-  top: 40px; /* ou ajuste como quiser */
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  z-index: 10;
-}
 
-.gatinho-topo {
-  width: 90px;
-}
+
 body, html {
   margin: 0;
   padding: 0;
@@ -50,7 +40,7 @@ form {
 
 form.container {
   position: relative;
-  margin-top: 80px; /* deixa espaço para o gatinho acima */
+  margin-top: 0; /* deixa espaço para o gatinho acima */
 }
 
 /* Scroll personalizado no formulário */
@@ -82,7 +72,7 @@ h3 {
   width: 100%;
   max-width: 400px;
   margin-bottom: 0.3rem !important; 
-  margin-top: 1.9rem !important;
+  margin-top: 1.5rem !important;
 }
 
 .input-field input {

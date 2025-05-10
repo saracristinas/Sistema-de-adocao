@@ -77,7 +77,7 @@ const Cadastro = () => {
   return (
     <div className="background-image">
       <div className="gatinho-wrapper">
-        <img src={gatinhoImg} alt="Gatinho" className="gatinho-topo" />
+        
       </div>
       <form className="container" onSubmit={handleSubmit}>
         <h1>Cadastre-se!</h1>
