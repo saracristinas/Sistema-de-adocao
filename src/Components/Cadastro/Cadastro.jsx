@@ -66,7 +66,7 @@ const Cadastro = () => {
         // Salva o nome do usuário no localStorage para ser usado na Home
         localStorage.setItem("username", usuarioCriado.name);
 
-        navigate("/home");
+        navigate("/login");
       }
     } catch (error) {
       console.error("Erro ao cadastrar:", error);

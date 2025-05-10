@@ -19,7 +19,7 @@ const Login = () => {
   };
 
   return (
-    <div className="login-wrapper background-image">
+    <div className="login-wrapper">
         <div className="form-container">
           <form onSubmit={handleSubmit}>
             <h1>Login</h1>

@@ -8,7 +8,7 @@
     align-items: center; /* Centraliza os itens verticalmente */
     min-height: 100vh; /* A altura mínima é 100% da altura da tela */
     background-image: url('/src/assets/Fundo-de-tela.svg');
-    background-color: #7f1d8a;
+    background-color: #687351;
     padding: 20px; /* Espaçamento interno */
     flex-wrap: nowrap; /* Impede quebra de linha */
     gap: 10px; /* Espaçamento entre os elementos */
