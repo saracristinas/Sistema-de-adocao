@@ -1,6 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=More+Sugar&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan&display=swap');
 
+html {
+  background-color: #e8e4db;
+  background-image: url('/src/assets/Fundo-de-tela.svg');
+  background-size: cover;
+  background-repeat: repeat-y; /* repete verticalmente */
+  background-position: center top;
+  height: 100%;
+}
+
 body {
   margin: 0;
   height: 100%;
@@ -10,6 +19,7 @@ body {
   background-size: cover; /* Faz a imagem cobrir toda a tela */
   background-position: center; /* Centraliza a imagem no fundo */
   background-attachment: fixed;
+  
 }
 
 .home-container {

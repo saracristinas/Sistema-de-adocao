@@ -8,7 +8,7 @@ import {
 } from "react-icons/fa";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
+import axios from "axios";
 import "./Cadastro.css";
 import gatinhoImg from "../../assets/gatinho-login.svg";
 import patinhas from "../../assets/patinhas.webp";
