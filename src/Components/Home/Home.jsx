@@ -1,3 +1,4 @@
+ master
 import React, { useState, useEffect } from "react";
 import "./Home.css";
 import { Link } from 'react-router-dom';
@@ -29,11 +30,28 @@ export default function Home({ username, onLogout }) {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
+
+import React, { useEffect, useState } from "react";
+import "./Home.css";
+import { Link } from 'react-router-dom';
+
+export default function Home({ onLogout }) {
+  const [username, setUsername] = useState("");
+
+  useEffect(() => {
+    const savedName = localStorage.getItem("username");
+    if (savedName) {
+      setUsername(savedName);
+    }
+  }, []);
+
+ master
   return (
     <div className="home-container">
       <Header username={username} onLogout={onLogout} />
 
       <main className="content">
+master
         <h1 className="titulo">Pronto para encontrar seu novo amigo de quatro patas?</h1>
         <div className="card-grid">
           {pets.map((pet, index) => (
@@ -44,6 +62,26 @@ export default function Home({ username, onLogout }) {
               <button onClick={() => showPetDetails(pet)}>Ver Detalhes</button>
             </div>
           ))}
+
+        <h3>Pronto para encontrar seu novo amigo de quatro patas?</h3>
+
+        <div className="card-grid">
+          <div className="pet-card">
+            <img src="/imagens/pet1.jpg" alt="Pet 1" />
+            <h3>Frajola</h3>
+            <p>Gato, 2 anos, dócil</p>
+          </div>
+          <div className="pet-card">
+            <img src="/imagens/pet2.jpg" alt="Pet 2" />
+            <h3>Rex</h3>
+            <p>Cão, 4 anos, brincalhão</p>
+          </div>
+          <div className="pet-card">
+            <img src="/imagens/pet3.jpg" alt="Pet 3" />
+            <h3>Bela</h3>
+            <p>Gata, 1 ano, carinhosa</p>
+          </div>
+ master
         </div>
       </main>
 
@@ -80,11 +118,19 @@ function Header({ username, onLogout }) {
       </div>
       <div className="header-right">
         {username ? (
+master
           <button onClick={onLogout} className="btn">Sair</button>
         ) : (
           <>
             <Link to="/login" className="btn">Login</Link>
             <Link to="/cadastro" className="btn">Cadastrar</Link>
+
+          <button onClick={onLogout}>Sair</button>
+        ) : (
+          <>
+            <Link to="/login" className="header-link">Login</Link>
+            <Link to="/cadastro" className="header-link">Cadastrar</Link>
+ master
           </>
         )}
       </div>
