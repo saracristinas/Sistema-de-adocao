@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
 import "./Home.css";
 import { Link } from 'react-router-dom';
+import dog1Image from '../../assets/Dog1.svg';
 
 export default function Home({ onLogout }) {
   const [selectedPet, setSelectedPet] = useState(null);
   const [username, setUsername] = useState("");
 
   const pets = [
-    { name: "Frajola", age: 2, type: "Gato", description: "Dócil", image: "/imagens/pet1.jpg" },
-    { name: "Rex", age: 4, type: "Cão", description: "Brincalhão", image: "/imagens/pet2.jpg" },
-    { name: "Bela", age: 1, type: "Gata", description: "Carinhosa", image: "/imagens/pet3.jpg" },
+    { name: "Frajola", age: 2, type: "Gato", description: "Dócil", image: "/imagens/Dog1.jpg" },
+    { name: "Rex", age: 4, type: "Cão", description: "Brincalhão", image: "/imagens/Dog1.jpg" },
+    { name: "Bela", age: 1, type: "Gata", description: "Carinhosa", image: "/imagens/Dog1.jpg" },
   ];
 
   useEffect(() => {
