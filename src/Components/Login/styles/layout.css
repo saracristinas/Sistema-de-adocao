@@ -80,7 +80,6 @@ form.container::-webkit-scrollbar-thumb {
 
 h1 {
   text-align: center;
-  margin-top: 2rem;
   margin-bottom: 2rem;
   font-size: 2rem;
   color: #776f6f;
@@ -192,7 +191,6 @@ h1 {
 
   h1 {
     font-size: 1.75rem;
-    margin-top: 1.5rem;
     margin-bottom: 1.5rem;
   }
 
@@ -236,7 +234,6 @@ h1 {
 
   h1 {
     font-size: 1.5rem;
-    margin-top: 1rem;
     margin-bottom: 1rem;
   }
 

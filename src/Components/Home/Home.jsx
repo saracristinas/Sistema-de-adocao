@@ -69,9 +69,7 @@ function Header({ username, onLogout }) {
     return name.replace(/\b\w/g, (char) => char.toUpperCase());
   };
 
-  const saudacao = username
-    ? `Olá, ${capitalizeName(username)}!`
-    : "Olá, visitante. Bem-vindo à nossa plataforma!";
+  const saudacao = `Olá, ${capitalizeName(username)}!`;
 
   return (
     <header className="header">
