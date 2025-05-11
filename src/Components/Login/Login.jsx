@@ -2,17 +2,45 @@ import { FaUser, FaLock } from "react-icons/fa";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "./Login.css";
+import axios from 'axios';
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    localStorage.setItem("nome", "Sara Sales");
-    alert(`Enviando os dados: Email:" ${username} - Senha: ${password}`);
-    navigate("/home");
+
+    try {
+      // 1. Autenticação
+      const response = await axios.post("http://localhost:8080/auth/login", {
+        email: username,
+        password: password,
+      });
+
+      const token = response.data.token;
+      localStorage.setItem("token", token);
+
+      // 2. Buscar usuário logado
+      const userResponse = await axios.get("http://localhost:8080/users/me", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      const user = userResponse.data;
+
+      // 3. Armazenar nome e dados no localStorage
+      localStorage.setItem("name", user.name);
+      localStorage.setItem("user", JSON.stringify(user));
+
+      // 4. Navegar
+      navigate("/home");
+    } catch (error) {
+      console.error("Erro no login:", error);
+      alert("Email ou senha inválidos.");
+    }
   };
 
   return (

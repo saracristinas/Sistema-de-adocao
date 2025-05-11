@@ -19,10 +19,11 @@ export default function Home({ onLogout }) {
   ];
 
   useEffect(() => {
-    const savedName = localStorage.getItem("username");
+    const savedName = localStorage.getItem("name");
     if (savedName) {
       setUsername(savedName);
     }
+
     const handleKeyDown = (e) => {
       if (e.key === "Escape") {
         setSelectedPet(null);
@@ -34,6 +35,12 @@ export default function Home({ onLogout }) {
 
   const showPetDetails = (pet) => setSelectedPet(pet);
   const closePetDetails = () => setSelectedPet(null);
+
+  const handleLogout = () => {
+    localStorage.clear(); // limpa nome e qualquer outro dado (token etc.)
+    if (onLogout) onLogout();
+    navigate("/login");
+  };
 
   return (
     <div className="home-container">
