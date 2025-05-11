@@ -23,46 +23,30 @@ const Cadastro = () => {
   const [phone, setPhone] = useState("");
   const navigate = useNavigate();
 
-  const handleCpfChange = (e) => {
-  let value = e.target.value.replace(/\D/g, ""); // Remove não-números
+ // ======================= MÁSCARA DE CPF =======================
+const handleCpfChange = (e) => {
+  let value = e.target.value.replace(/\D/g, "").slice(0, 11); // Remove não números e limita a 11 dígitos
 
-  if (value.length > 11) value = value.slice(0, 11); // Limita a 11 dígitos
-
-  // Aplica máscara: 000.000.000-00
-  value = value.replace(/(\d{3})(\d)/, "$1.$2");
-  value = value.replace(/(\d{3})(\d)/, "$1.$2");
-  value = value.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+  // Aplica a máscara 000.000.000-00 com uma expressão só
+  value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{0,2})/, (match, p1, p2, p3, p4) =>
+    `${p1}.${p2}.${p3}${p4 ? `-${p4}` : ""}`
+  );
 
   setCpf(value);
 };
-   
+
+// ======================= MÁSCARA DE TELEFONE =======================
 const handlePhoneChange = (e) => {
-  let value = e.target.value.replace(/\D/g, "");
-  value = value.slice(0, 11);
+  let value = e.target.value.replace(/\D/g, "").slice(0, 11); // Remove não números e limita a 11 dígitos
 
-  let formattedValue = "";
+  // Aplica a máscara (00) 00000-0000 ou (00) 0000-0000
+  value = value.replace(/^(\d{2})(\d{4,5})(\d{0,4})/, (match, ddd, meio, fim) =>
+    `(${ddd}) ${meio}${fim ? `-${fim}` : ""}`
+  );
 
-  if (value.length > 0) {
-    formattedValue += `(${value.substring(0, 2)}`;
-  }
-
-  if (value.length > 2) {
-    formattedValue += `) `;
-  }
-
-  if (value.length > 2 && value.length <= 7) {
-    formattedValue += value.substring(2);
-  } else if (value.length > 7) {
-    formattedValue += `${value.substring(2, 7)}-${value.substring(7, 11)}`;
-  } else if (value.length > 2 && value.length <= 3) {
-    formattedValue += value.substring(2);
-  } else if (value.length > 3 && value.length <= 7) {
-    formattedValue = `(${value.substring(0, 2)}) ${value.substring(2)}`;
-  }
-
-
-  setPhone(formattedValue);
+  setPhone(value);
 };
+
 
   // Função que formata a primeira letra maiúscula do nome
   const capitalizeFirstLetter = (str) => {
