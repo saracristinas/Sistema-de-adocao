@@ -12,7 +12,7 @@
   width: 100vw;
   height: 100vh;
   background-image: url('/src/assets/Fundo-de-tela.svg');
-  background-color: #687351;
+  background-color: #9ba389;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,7 +22,7 @@
 .login-wrapper {
   display: flex;
   background-color: #c77b7b;
-  border-radius: 10px;
+  border-radius: 24px;
   overflow: hidden;
   max-width: 900px;
   width: 90%;
@@ -31,7 +31,7 @@
 
 .image-side {
   flex: 1;
-  background-color: #b01313;
+  background-color: #687351;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,7 +39,7 @@
 }
 
 .image-side img {
-  width: 40px;
+  width: 150px;
   height: auto;
   object-fit: cover;
 }
@@ -53,12 +53,12 @@
 }
 
 .form-container {
-  background-color: #1a8e12;
+  background-color: #E8E4DB;
   padding: 3rem 4rem;
   border-radius: 10px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
 }
 
 /* ===== Título ===== */
