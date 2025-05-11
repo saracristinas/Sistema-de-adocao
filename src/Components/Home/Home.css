@@ -1,20 +1,21 @@
+/* Importando fontes personalizadas */
 @import url('https://fonts.googleapis.com/css2?family=More+Sugar&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan&display=swap');
 
-
-
+/* Configuração global do corpo da página */
 body, html {
   margin: 0;
   height: 100%;
   font-family: 'League Spartan', sans-serif;
   background-color: #e8e4db;
   background-image: url('/src/assets/Fundo-de-tela.svg');
-  background-size: cover; /* Faz a imagem cobrir toda a tela */
-  background-position: center; /* Centraliza a imagem no fundo */
+  background-size: cover;
+  background-position: center;
   background-attachment: fixed;
   background-repeat: repeat-y;
 }
 
+/* Container principal da página */
 .home-container {
   display: flex;
   flex-direction: column;
@@ -22,6 +23,7 @@ body, html {
   justify-content: space-between;
 }
 
+/* Estilo base dos botões */
 .btn {
   background: transparent;
   border: none;
@@ -32,10 +34,10 @@ body, html {
   padding: 8px 12px;
   position: relative;
   transition: color 0.3s ease;
-  text-decoration: none; /* remove sublinhado padrão do Link */
+  text-decoration: none;
 }
 
-/* Efeito sublinhado suave ao hover */
+/* Efeito sublinhado ao passar o mouse nos botões */
 .btn::after {
   content: "";
   position: absolute;
@@ -56,6 +58,7 @@ body, html {
   width: 100%;
 }
 
+/* Estilização do cabeçalho */
 .header {
   font-family: 'League Spartan', cursive;
   font-weight: bold;
@@ -66,12 +69,12 @@ body, html {
   align-items: center;
   background: linear-gradient(to bottom, #687351, #9ba17f);
   padding: 15px;
-  font-size: 1.4vw; /* Tamanho de fonte responsivo */
+  font-size: 1.4vw;
 }
 
 @media (max-width: 768px) {
   .header {
-    font-size: 2vw; /* Ajusta o tamanho para telas menores */
+    font-size: 2vw;
   }
 }
 
@@ -79,6 +82,7 @@ body, html {
   margin: 0;
 }
 
+/* Link no cabeçalho com efeito */
 .header-link {
   background: transparent;
   color: #e8e4db;
@@ -95,13 +99,12 @@ body, html {
 }
 
 .header-link:hover {
-  color: #ffffff; 
-  transform: scale(1.05); 
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
-  background: transparent; 
+  color: #ffffff;
+  transform: scale(1.05);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
-/* Main Content */
+/* Conteúdo principal da página */
 .content {
   padding: 20px;
   text-align: center;
@@ -110,6 +113,7 @@ body, html {
   margin: 0 auto;
 }
 
+/* Título principal */
 .titulo {
   font-family: 'League Spartan', cursive;
   font-size: clamp(24px, 5vw, 36px);
@@ -120,6 +124,7 @@ body, html {
   margin-bottom: 20px;
 }
 
+/* Subtítulos */
 .content h3 {
   font-family: 'More Sugar', cursive;
   font-size: 24px;
@@ -129,34 +134,42 @@ body, html {
   color: #333;
 }
 
-/* Card Grid */
+/* Container dos cards */
 .card-grid {
   display: flex;
-  flex-wrap: wrap;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
-  padding: 20px 0;
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
 }
 
+/* Estilização da imagem dentro do card */
+.pet-card img {
+  width: 100%;
+  height: 180px; /* Ajustado para uma altura mais baixa */
+  object-fit: cover;
+  margin-bottom: 10px; /* Menos espaço abaixo da imagem */
+}
+
+/* Card de pet */
 .pet-card {
-  background-color: white;
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  background-color: #fff;
+  box-sizing: border-box;
   text-align: center;
-  min-height: 40vh;
-  min-width: 40vh;
 }
 
 .pet-card:hover {
   transform: translateY(-10px);
-}
-
-.pet-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
 }
 
 .pet-card h3 {
@@ -178,18 +191,34 @@ body, html {
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  position: bottom;
-  margin: 30% 0;
+  margin-top: auto; /* Coloca o botão no final do card */
+  margin-bottom: 0; /* Remove o espaço abaixo do botão */
 }
 
 .pet-card button:hover {
   background-color: #4338ca;
 }
 
+/* Modal de detalhes do pet */
+.pet-detail-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  backdrop-filter: blur(2px);
+}
+
+/* Card de detalhe do pet */
 .pet-detail-card {
   background-color: white;
   border-radius: 16px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5); /* sombra mais forte */
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
   padding: 30px 25px;
   max-width: 420px;
   width: 90%;
@@ -244,22 +273,8 @@ body, html {
 .pet-detail-card .close-btn:hover {
   color: #000;
 }
-.pet-detail-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* escurece mais o fundo */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-  backdrop-filter: blur(2px); /* adiciona um desfoque sutil no fundo */
-}
 
-
-/* Footer */
+/* Rodapé da página */
 .footer {
   font-family: 'More Sugar', cursive;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
@@ -267,26 +282,25 @@ body, html {
   color: #e8e4db;
   text-align: center;
   padding: 10px;
-  font-size: 1.2vw; /* Tamanho de fonte responsivo */
-}
-
-@media (max-width: 768px) {
-  .footer {
-    font-size: 2vw; /* Ajusta o tamanho para telas menores */
-  }
+  font-size: 1.2vw;
 }
 
 .footer p {
   margin: 0;
 }
 
-/* Responsividade adicional */
+/* Responsividade adicional para telas pequenas */
+@media (max-width: 768px) {
+  .footer {
+    font-size: 2vw;
+  }
+}
+
 @media (max-width: 480px) {
   .header {
-    font-size: 5vw; /* Maior ajuste para telas muito pequenas */
+    font-size: 5vw;
   }
-
   .footer {
-    font-size: 3vw; /* Maior ajuste para telas muito pequenas */
+    font-size: 3vw;
   }
 }

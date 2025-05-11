@@ -1,16 +1,31 @@
+// ✅ IMPORTS DEVEM FICAR NO TOPO
 import React, { useState, useEffect } from "react";
 import "./Home.css";
 import { Link } from 'react-router-dom';
+<<<<<<< HEAD
 import dog1Image from '../../assets/Dog1.svg';
+=======
+import dog1Image from '../../assets/dog1teste.svg';
+import dog2Image from '../../assets/Dog1.svg';
+>>>>>>> 862e033049f60c8f7243e08f4f8e8a05fe0c6edc
 
 export default function Home({ onLogout }) {
   const [selectedPet, setSelectedPet] = useState(null);
   const [username, setUsername] = useState("");
 
+  // ✅ Pets incluindo imagens importadas
   const pets = [
+<<<<<<< HEAD
     { name: "Frajola", age: 2, type: "Gato", description: "Dócil", image: "/imagens/Dog1.jpg" },
     { name: "Rex", age: 4, type: "Cão", description: "Brincalhão", image: "/imagens/Dog1.jpg" },
     { name: "Bela", age: 1, type: "Gata", description: "Carinhosa", image: "/imagens/Dog1.jpg" },
+=======
+    { name: "Frajola", age: 2, type: "Gato", description: "Dócil", image: dog1Image },
+    { name: "Rex", age: 4, type: "Cão", description: "Brincalhão", image: dog1Image },
+    { name: "Bela", age: 1, type: "Gata", description: "Carinhosa", image: dog1Image },
+    { name: "Bolt", age: 3, type: "Cão", description: "Ativo", image: dog1Image },
+    { name: "Luna", age: 5, type: "Cadela", description: "Tranquila", image: dog2Image },
+>>>>>>> 862e033049f60c8f7243e08f4f8e8a05fe0c6edc
   ];
 
   useEffect(() => {
