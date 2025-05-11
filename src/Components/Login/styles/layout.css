@@ -4,25 +4,32 @@
 .login-wrapper {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Alinha no topo */
+    height: auto;
     min-height: 100vh;
-    padding: 20px;
+    padding-top: 40px; /* define um espaçamento fixo no topo */
+    padding-bottom: 40px; /* define um espaçamento fixo embaixo */
     background-image: url('/src/assets/Fundo-de-tela.svg');
     background-color: #687351;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
+
 .form-container {
     width: 100%;
     max-width: 400px;
     background-color: #eee8dc;
-    padding: 10px 80px;
-    border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(3px);
-    transition: all 0.3s ease;
+    padding: 40px 40px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* controla o espaçamento entre os elementos */
+    border-radius: 35px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
 }
+
 
 /* ========== Responsividade ========== */
 
