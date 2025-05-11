@@ -137,6 +137,12 @@ body, html {
   gap: 20px;
   padding: 20px 0;
 }
+/* Ajuste específico da imagem */
+.card img {
+  max-height: 100px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
 
 .pet-card {
   background-color: white;
