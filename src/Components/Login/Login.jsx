@@ -73,15 +73,7 @@ const Login = () => {
               />
               <FaLock className="icon" />
             </div>
-
-            <div className="recall-forget">
-              <label>
-                <input type="checkbox" />
-                Lembre de mim
-              </label>
-              <a href="#">Esqueceu sua senha?</a>
-            </div>
-
+            
             <div className="button-field">
               <button type="submit">Entrar</button>
             </div>
