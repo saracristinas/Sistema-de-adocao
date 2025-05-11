@@ -12,8 +12,6 @@ import axios from "axios";
 import "./Cadastro.css";
 import patinhas from "../../assets/patinhas.webp";
 
-
-
 const Cadastro = () => {
   const [cpf, setCpf] = useState("");
   const [username, setUsername] = useState("");
@@ -127,9 +125,6 @@ const handlePhoneChange = (e) => {
          />
           <FaIdCard className="icon" />
         </div>
-
-
-
 
         <div className="input-field">
           <input
