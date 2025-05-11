@@ -1,13 +1,14 @@
 // ✅ IMPORTS DEVEM FICAR NO TOPO
 import React, { useState, useEffect } from "react";
 import "./Home.css";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; // Importe useNavigate
 import dog1Image from '../../assets/Dog1.svg';
 import dog2Image from '../../assets/Dog1.svg';
 
 export default function Home({ onLogout }) {
   const [selectedPet, setSelectedPet] = useState(null);
   const [username, setUsername] = useState("");
+  const navigate = useNavigate(); // Inicialize useNavigate
 
   // ✅ Pets incluindo imagens importadas
   const pets = [
@@ -19,7 +20,7 @@ export default function Home({ onLogout }) {
   ];
 
   useEffect(() => {
-    const savedName = localStorage.getItem("name");
+    const savedName = localStorage.getItem("username");
     if (savedName) {
       setUsername(savedName);
     }
@@ -44,14 +45,16 @@ export default function Home({ onLogout }) {
 
   return (
     <div className="home-container">
-      <Header username={username} onLogout={onLogout} />
+      <Header username={username} onLogout={handleLogout} /> {/* Use handleLogout aqui */}
 
       <main className="content">
         <h1 className="titulo">Pronto para encontrar seu novo amigo de quatro patas?</h1>
         <div className="card-grid">
           {pets.map((pet, index) => (
             <div key={index} className="pet-card">
-              <img src={pet.image} alt={`Foto do pet ${pet.name}`} />
+              <div className="pet-image-container"> {/* Novo container para a imagem */}
+                <img src={pet.image} alt={`Foto do pet ${pet.name}`} />
+              </div>
               <h3>{pet.name}</h3>
               <p>{pet.type}, {pet.age} anos, {pet.description}</p>
               <button onClick={() => showPetDetails(pet)}>Ver Detalhes</button>
