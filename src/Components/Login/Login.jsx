@@ -17,7 +17,7 @@ const Login = () => {
 
   return (
     <div className="background-image">
-      <form className="container" onSubmit={handleSubmit}>
+      <form className="form-container" onSubmit={handleSubmit}>
         <h1>Login</h1>
 
         <div className="input-field">
