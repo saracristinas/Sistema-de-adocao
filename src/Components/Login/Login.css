@@ -1,128 +1,98 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Open+Sans:wght@300;400;500;600&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
-}
-
-/* ===== Tela de fundo ===== */
-.login-background-image {
-  width: 100vw;
-  height: 100vh;
-  background-image: url('/src/assets/Fundo-de-tela.svg');
-  background-color: #9ba389;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* ===== Estrutura principal (imagem + formulário) ===== */
+/* ========== Wrapper geral da tela ========== */
 .login-wrapper {
   display: flex;
-  background-color: #c77b7b;
-  border-radius: 24px;
-  overflow: hidden;
-  max-width: 900px;
-  width: 90%;
-  align-items: stretch; /* Adicionado */
-}
-
-.image-side {
-  flex: 1;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-image: url('/src/assets/Fundo-de-tela.svg');
   background-color: #687351;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* height: 100%; REMOVER ESSA LINHA */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.image-side img {
-  width: 150px;
-  height: auto;
-  object-fit: cover;
-}
 
-/* ===== Container do formulário ===== */
-.form-side {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
+/* ========== Container do formulário ========== */
 .form-container {
-  background-color: #E8E4DB;
-  padding: 3rem 4rem;
-  border-radius: 10px;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 500px;
+  max-width: 400px;
+  background-color: #e8e4db;
+  padding: 10px 80px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(3px);
+  transition: all 0.3s ease;
 }
 
-/* ===== Título ===== */
-.form-container h1 {
+
+/* ========== Título principal ========== */
+.form-container h1,
+h1 {
   text-align: center;
+  font-size: 30px;
+  color: #776f6f;
   margin-bottom: 2rem;
-  position: relative;
-  font-size: 2rem;
-  color: #333;
 }
 
-.form-container h1::after {
-  content: '';
-  display: block;
-  width: 5rem;
-  height: 0.3rem;
-  background-color: #687351;
-  margin: 0.5rem auto 0;
-  border-radius: 10px;
-}
 
-/* ===== Campo de input com ícone ===== */
+/* ========== Campo de entrada ========== */
 .input-field {
   position: relative;
-  margin-bottom: 1.5rem;
+  width: 100%;
+  margin: 0.5rem 0 1.5rem;
 }
 
 .input-field input {
   width: 100%;
-  padding: 0.8rem 1rem 0.8rem 2.5rem;
+  padding: 10px 10px 10px 40px;
+  border-radius: 25px;
   border: none;
-  border-radius: 10px;
-  box-shadow: 1px 1px 6px #0000001c;
-  font-size: 0.9rem;
-  transition: 0.3s ease-in-out;
+  font-size: 1rem;
+  background-color: #fff;
+  outline: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
 }
 
-.input-field input:hover {
-  background-color: #eeeeee75;
-}
-
-.input-field input:focus-visible {
-  outline: 1px solid #6c63ff;
+.input-field input::placeholder {
+  color: rgb(117, 92, 63);
 }
 
 .input-field .icon {
   position: absolute;
-  left: 10px;
   top: 50%;
+  left: 12px;
   transform: translateY(-50%);
-  color: #6c63ff;
+  color: #888;
+  font-size: 1rem;
 }
 
-/* ===== Checkbox e link ===== */
+
+/* ========== Área de "Lembre-se de mim" + "Esqueceu a senha?" ========== */
 .recall-forget {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  font-size: 0.8rem;
-  margin-bottom: 1.5rem;
+  width: 100%;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+  gap: 10px;
+}
+
+.recall-forget label {
+  display: flex;
+  align-items: center;
+  color: rgb(255, 0, 140);
+}
+
+.recall-forget input[type="checkbox"] {
+  margin-right: 0.5rem;
 }
 
 .recall-forget a {
-  color: #6c63ff;
+  color: violet;
   text-decoration: none;
 }
 
@@ -130,55 +100,138 @@
   text-decoration: underline;
 }
 
-/* ===== Botão de login ===== */
+
+/* ========== Botão de login ========== */
 .button-field {
-  margin-bottom: 1.5rem;
-}
-
-.button-field button {
+  margin-top: 1.5rem;
+  display: flex;
   width: 100%;
-  background-color: #6c63ff;
-  color: #fff;
-  padding: 0.8rem;
+}
+
+.button-field button,
+.form-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #687351;
+  color: white;
+  font-size: 1rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 30px;
   cursor: pointer;
-  font-weight: 500;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
 }
 
-.button-field button:hover {
-  background-color: #6b63fff1;
+.button-field button:hover,
+.form-container button:hover {
+  background-color: #9ba17f;
 }
 
-/* ===== Link para cadastro ===== */
+
+/* ========== Link de cadastro ========== */
 .signup-link {
-  text-align: center;
   font-size: 0.9rem;
+  text-align: center;
+  margin-top: 1rem;
+  color: #555;
 }
 
-.signup-link a {
-  color: #6c63ff;
+.signup-link p a {
+  color: #48417a;
   text-decoration: none;
   font-weight: 600;
+  margin-left: 10px;
 }
 
 .signup-link a:hover {
   text-decoration: underline;
 }
 
-/* ===== RESPONSIVO ===== */
-@media screen and (max-width: 768px) {
-  .login-wrapper {
-    flex-direction: column;
-  }
 
-  .image-side {
-    display: none;
-  }
+/* ========== Scroll personalizado no formulário ========== */
+form.container::-webkit-scrollbar {
+  width: 8px;
+}
 
+form.container::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+
+/* ========== Responsividade ========== */
+
+/* Tablets e notebooks menores */
+@media (max-width: 999px) and (min-width: 769px) {
   .form-container {
-    padding: 2rem;
+    max-width: 90%;
+    padding: 28px 30px;
+  }
+}
+
+
+/* Dispositivos móveis médios */
+@media (max-width: 768px) {
+  .form-container {
+    max-width: 95%;
+    padding: 25px 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 1.5rem;
+  }
+
+  .input-field input {
+    font-size: 14px;
+    padding: 12px 15px;
+  }
+
+  .recall-forget {
+    flex-direction: column;
+    font-size: 13px;
+    gap: 8px;
+  }
+
+  button {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .signup-link {
+    font-size: 0.85rem;
+  }
+}
+
+
+/* Dispositivos muito pequenos */
+@media (max-width: 480px) {
+  .form-container {
     width: 100%;
+    border-radius: 34px;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .input-field input {
+    font-size: 0.9rem;
+    padding: 8px 8px 8px 35px;
+  }
+
+  .input-field .icon {
+    font-size: 0.9rem;
+    left: 10px;
+  }
+
+  .button-field button {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+
+  .signup-link {
+    font-size: 0.75rem;
   }
 }
