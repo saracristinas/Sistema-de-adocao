@@ -10,7 +10,6 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Cadastro.css";
-import gatinhoImg from "../../assets/gatinho-login.svg";
 import patinhas from "../../assets/patinhas.webp";
 
 const Cadastro = () => {
@@ -76,9 +75,7 @@ const Cadastro = () => {
 
   return (
     <div className="background-image">
-      <div className="gatinho-wrapper">
-        
-      </div>
+      
       <form className="container" onSubmit={handleSubmit}>
         <h1>Cadastre-se!</h1>
         <h3>Os pets estão esperando</h3>
