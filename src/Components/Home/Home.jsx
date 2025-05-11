@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import "./Home.css";
 import { Link } from 'react-router-dom';
-import dog1Image from '../../assets/Dog1.svg';
+import dog1Image from '../../assets/dog1teste.svg';
 import dog2Image from '../../assets/Dog1.svg';
 
 export default function Home({ onLogout }) {
