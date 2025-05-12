@@ -100,85 +100,91 @@ const handlePhoneChange = (e) => {
 
   return (
     <div className="background-image">
-      
-      <form className="container" onSubmit={handleSubmit}>
-        <h1>Cadastre-se!</h1>
-        <h3>Os pets estão esperando</h3>
-
-        <div className="input-field">
-          <input
-            type="text"
-            placeholder="Nome de usuário"
-            required
-            onChange={(e) => setUsername(e.target.value)}
-          />
-          <FaUser className="icon" />
+      <div className="cadastro-wrapper">
+        <div className="image-side">
+          <img src={patinhas} alt="Imagem de pets" style={{ width: "80%", maxWidth: "300px" }} />
         </div>
-
-        <div className="input-field">
-          <input
-            type="text"
-            placeholder="CPF"
-            value={cpf}
-            required
-            onChange={handleCpfChange}
-         />
-          <FaIdCard className="icon" />
-        </div>
-
-        <div className="input-field">
-          <input
-            type="email"
-            placeholder="E-mail"
-            required
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <FaEnvelope className="icon" />
-        </div>
-
-        <div className="input-field">
-          <input
-            type="tel"
-            placeholder="Telefone"
-            required
-            value={phone} // Adicionando o valor formatado
-            onChange={handlePhoneChange} // Usando a nova função
-          />
-          <FaPhoneAlt className="icon" />
-        </div>
-
-        <div className="input-field">
-          <input
-            type="password"
-            placeholder="Senha"
-            required
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <FaLock className="icon" />
-        </div>
-
-        <div className="input-field">
-          <input
-            type="password"
-            placeholder="Confirmar Senha"
-            required
-            onChange={(e) => setConfirmPassword(e.target.value)}
-          />
-          <FaLock className="icon" />
-        </div>
-
-        <div className="button-field">
-          <button type="submit">Cadastrar</button>
-        </div>
-
-        <div className="login-link">
-          <p>
-            Já tem uma conta? <Link to="/login">Login</Link>
-          </p>
-        </div>
-      </form>
+  
+        <form onSubmit={handleSubmit}>
+          <h1>Cadastre-se!</h1>
+          <h3>Os pets estão esperando</h3>
+  
+          <div className="input-field">
+            <input
+              type="text"
+              placeholder="Nome de usuário"
+              required
+              onChange={(e) => setUsername(e.target.value)}
+            />
+            <FaUser className="icon" />
+          </div>
+  
+          <div className="input-field">
+            <input
+              type="text"
+              placeholder="CPF"
+              value={cpf}
+              required
+              onChange={handleCpfChange}
+            />
+            <FaIdCard className="icon" />
+          </div>
+  
+          <div className="input-field">
+            <input
+              type="email"
+              placeholder="E-mail"
+              required
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <FaEnvelope className="icon" />
+          </div>
+  
+          <div className="input-field">
+            <input
+              type="tel"
+              placeholder="Telefone"
+              required
+              value={phone}
+              onChange={handlePhoneChange}
+            />
+            <FaPhoneAlt className="icon" />
+          </div>
+  
+          <div className="input-field">
+            <input
+              type="password"
+              placeholder="Senha"
+              required
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <FaLock className="icon" />
+          </div>
+  
+          <div className="input-field">
+            <input
+              type="password"
+              placeholder="Confirmar Senha"
+              required
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
+            <FaLock className="icon" />
+          </div>
+  
+          <div className="button-field">
+            <button type="submit">Cadastrar</button>
+          </div>
+  
+          <div className="login-link">
+            <p>
+              Já tem uma conta? <Link to="/login">Login</Link>
+            </p>
+          </div>
+        </form>
+      </div>
     </div>
   );
+  
 };
 
 export default Cadastro;
