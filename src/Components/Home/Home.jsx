@@ -1,19 +1,19 @@
 // ✅ IMPORTS DEVEM FICAR NO TOPO
 import React, { useState, useEffect } from "react";
 import "./Home.css";
-import { Link, useNavigate } from 'react-router-dom'; // Importe useNavigate
-import doguinhoImage from '../../assets/doguinho.jpg';
-import gatocinzaImage from '../../assets/gatocinza.jpg';
-import gatolaranjaImage from '../../assets/gatolaranja.jpg';
-import dogpastorImage from '../../assets/pastoralemao.jpg';
-import dogpoodleImage from '../../assets/poodle.jpg';
+import { Link, useNavigate } from "react-router-dom";
+import doguinhoImage from "../../assets/doguinho.jpg";
+import gatocinzaImage from "../../assets/gatocinza.jpg";
+import gatolaranjaImage from "../../assets/gatolaranja.jpg";
+import dogpastorImage from "../../assets/pastoralemao.jpg";
+import dogpoodleImage from "../../assets/poodle.jpg";
 
 export default function Home({ onLogout }) {
   const [selectedPet, setSelectedPet] = useState(null);
   const [username, setUsername] = useState("");
-  const navigate = useNavigate(); // Inicialize useNavigate
+  const navigate = useNavigate();
 
-  // ✅ Pets incluindo imagens importadas
+  // ✅ Lista de pets com imagens importadas
   const pets = [
     { name: "Frajola", age: 2, type: "Gato", description: "Dócil", image: gatocinzaImage },
     { name: "Rex", age: 4, type: "Cão", description: "Brincalhão", image: doguinhoImage },
@@ -23,11 +23,20 @@ export default function Home({ onLogout }) {
   ];
 
   useEffect(() => {
-    const savedName = localStorage.getItem("username");
+    // ✅ Verifica se o usuário está logado
+    const token = localStorage.getItem("token");
+    if (!token) {
+      navigate("/login"); // 🔒 Redireciona para login se não estiver autenticado
+      return;
+    }
+
+    // ✅ Pega o nome salvo no login
+    const savedName = localStorage.getItem("name");
     if (savedName) {
       setUsername(savedName);
     }
 
+    // ✅ Permite fechar o card de detalhes com ESC
     const handleKeyDown = (e) => {
       if (e.key === "Escape") {
         setSelectedPet(null);
@@ -35,27 +44,27 @@ export default function Home({ onLogout }) {
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, []);
+  }, [navigate]);
 
   const showPetDetails = (pet) => setSelectedPet(pet);
   const closePetDetails = () => setSelectedPet(null);
 
   const handleLogout = () => {
-    localStorage.clear(); // limpa nome e qualquer outro dado (token etc.)
+    localStorage.clear(); // ✅ Limpa dados do usuário e token
     if (onLogout) onLogout();
     navigate("/login");
   };
 
   return (
     <div className="home-container">
-      <Header username={username} onLogout={handleLogout} /> {/* Use handleLogout aqui */}
+      <Header username={username} onLogout={handleLogout} />
 
       <main className="content">
         <h1 className="titulo">Pronto para encontrar seu novo amigo de quatro patas?</h1>
         <div className="card-grid">
           {pets.map((pet, index) => (
             <div key={index} className="pet-card">
-              <div className="pet-image-container"> {/* Novo container para a imagem */}
+              <div className="pet-image-container">
                 <img src={pet.image} alt={`Foto do pet ${pet.name}`} />
               </div>
               <h3>{pet.name}</h3>
@@ -66,6 +75,7 @@ export default function Home({ onLogout }) {
         </div>
       </main>
 
+      {/* ✅ Modal com detalhes do pet */}
       {selectedPet && (
         <div className="pet-detail-container">
           <div className="pet-detail-card">
@@ -84,6 +94,7 @@ export default function Home({ onLogout }) {
 }
 
 function Header({ username, onLogout }) {
+  // ✅ Capitaliza o nome do usuário
   const capitalizeName = (name) => {
     return name.replace(/\b\w/g, (char) => char.toUpperCase());
   };
