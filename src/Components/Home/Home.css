@@ -251,7 +251,7 @@ object-fit: cover; /* Garante que a imagem cubra o container sem distorção */
 
 /* Card de detalhe do pet */
 .pet-detail-card {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 4 / 4;
   background-color: white;
   border-radius: 16px;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
@@ -276,6 +276,7 @@ object-fit: cover; /* Garante que a imagem cubra o container sem distorção */
 }
 
 .pet-detail-card img {
+  
   width: 100%;
   height: 220px;
   object-fit: cover;

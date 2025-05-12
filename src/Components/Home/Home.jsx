@@ -2,9 +2,11 @@
 import React, { useState, useEffect } from "react";
 import "./Home.css";
 import { Link, useNavigate } from 'react-router-dom'; // Importe useNavigate
-import dog1Image from '../../assets/Dog1.svg';
-import dog2Image from '../../assets/Dog1.svg';
 import doguinhoImage from '../../assets/doguinho.jpg';
+import gatocinzaImage from '../../assets/gatocinza.jpg';
+import gatolaranjaImage from '../../assets/gatolaranja.jpg';
+import dogpastorImage from '../../assets/pastoralemao.jpg';
+import dogpoodleImage from '../../assets/poodle.jpg';
 
 export default function Home({ onLogout }) {
   const [selectedPet, setSelectedPet] = useState(null);
@@ -13,11 +15,11 @@ export default function Home({ onLogout }) {
 
   // ✅ Pets incluindo imagens importadas
   const pets = [
-    { name: "Frajola", age: 2, type: "Gato", description: "Dócil", image: dog1Image },
+    { name: "Frajola", age: 2, type: "Gato", description: "Dócil", image: gatocinzaImage },
     { name: "Rex", age: 4, type: "Cão", description: "Brincalhão", image: doguinhoImage },
-    { name: "Bela", age: 1, type: "Gata", description: "Carinhosa", image: dog1Image },
-    { name: "Bolt", age: 3, type: "Cão", description: "Ativo", image: dog1Image },
-    { name: "Luna", age: 5, type: "Cadela", description: "Tranquila", image: dog2Image },
+    { name: "Bela", age: 1, type: "Gata", description: "Carinhosa", image: gatolaranjaImage },
+    { name: "Bolt", age: 3, type: "Cão", description: "Ativo", image: dogpastorImage },
+    { name: "Luna", age: 5, type: "Cadela", description: "Tranquila", image: dogpoodleImage },
   ];
 
   useEffect(() => {
