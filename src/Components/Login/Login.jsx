@@ -3,6 +3,8 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "./Login.css";
 import axios from "axios";
+import dogloginImage from "../../assets/dog-coitado.svg";
+
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -47,6 +49,7 @@ const Login = () => {
     <div className="login-background-image">
       <div className="login-wrapper">
         <div className="image-side">
+        <img src="src/assets/dog-coitado.svg" alt="dogloginImage"></img>
         </div>
 
         <div className="form-side">
