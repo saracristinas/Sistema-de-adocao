@@ -4,6 +4,7 @@ import "./Home.css";
 import { Link, useNavigate } from 'react-router-dom'; // Importe useNavigate
 import dog1Image from '../../assets/Dog1.svg';
 import dog2Image from '../../assets/Dog1.svg';
+import doguinhoImage from '../../assets/doguinho.jpg';
 
 export default function Home({ onLogout }) {
   const [selectedPet, setSelectedPet] = useState(null);
@@ -13,7 +14,7 @@ export default function Home({ onLogout }) {
   // ✅ Pets incluindo imagens importadas
   const pets = [
     { name: "Frajola", age: 2, type: "Gato", description: "Dócil", image: dog1Image },
-    { name: "Rex", age: 4, type: "Cão", description: "Brincalhão", image: dog1Image },
+    { name: "Rex", age: 4, type: "Cão", description: "Brincalhão", image: doguinhoImage },
     { name: "Bela", age: 1, type: "Gata", description: "Carinhosa", image: dog1Image },
     { name: "Bolt", age: 3, type: "Cão", description: "Ativo", image: dog1Image },
     { name: "Luna", age: 5, type: "Cadela", description: "Tranquila", image: dog2Image },

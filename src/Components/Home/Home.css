@@ -162,6 +162,8 @@ body, html {
 
 /* Estilo para o container da imagem */
 .pet-image-container {
+  aspect-ratio: 4 / 4;
+  justify-content: center;
   width: 100%; /* O container da imagem ocupa toda a largura do card */
   max-height: 220px; /* Defina uma altura máxima para o container */
   overflow: hidden; /* Recorta a imagem se ela exceder o container */
@@ -171,9 +173,12 @@ body, html {
 
 /* Estilização da imagem dentro do container */
 .pet-image-container img {
-  width: 100%; /* A imagem ocupa toda a largura do container pai */
-  height: 100%; /* A imagem ocupa toda a altura do container pai */
-  object-fit: cover; /* Garante que a imagem cubra o container sem distorção */
+width: 100%; /* Permite que a largura se ajuste à proporção */
+height: auto; /* Permite que a altura se ajuste à proporção */
+min-width: 100%; /* Garante que a imagem cubra o container */
+max-width: 250%; /* Garante que não ultrapasse a largura do container */
+max-height: 250%; /* Garante que não ultrapasse a altura do container */
+object-fit: cover; /* Garante que a imagem cubra o container sem distorção */
 }
 
 .pet-card {
@@ -240,12 +245,13 @@ body, html {
 
 /* Card de detalhe do pet */
 .pet-detail-card {
+  aspect-ratio: 4 / 3;
   background-color: white;
   border-radius: 16px;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
   padding: 30px 25px;
   max-width: 420px;
-  width: 90%;
+  width: 100%;
   text-align: center;
   position: relative;
   transform: scale(1);
