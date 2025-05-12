@@ -2,7 +2,7 @@ import { FaUser, FaLock } from "react-icons/fa";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "./Login.css";
-import axios from 'axios';
+import axios from "axios";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -47,7 +47,6 @@ const Login = () => {
     <div className="login-background-image">
       <div className="login-wrapper">
         <div className="image-side">
-          <img src="/src/assets/menina-e-animais.webp" alt="Menina e Animais" />
         </div>
 
         <div className="form-side">
@@ -73,7 +72,7 @@ const Login = () => {
               />
               <FaLock className="icon" />
             </div>
-            
+
             <div className="button-field">
               <button type="submit">Entrar</button>
             </div>
