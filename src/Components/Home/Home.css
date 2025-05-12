@@ -82,7 +82,7 @@ body, html {
 @media (max-width: 480px) {
   .header {
     font-size: clamp(12px, 3vw, 18px);
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
     padding: 8px;
     width: 100%; /* Garante largura total em telas ainda menores */
@@ -117,10 +117,10 @@ body, html {
 
 /* Conteúdo principal da página */
 .content {
-  padding: 20px;
+  padding: 15px;
   text-align: center;
   flex: 1;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -148,7 +148,7 @@ body, html {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 0.75rem; /* Reduzi o gap */
+  gap: 0.85rem; /* Reduzi o gap */
   padding: 0;
   justify-content: flex-start;
 }
@@ -184,7 +184,7 @@ object-fit: cover; /* Garante que a imagem cubra o container sem distorção */
 .pet-card {
   width: 100%;
   max-width: 220px; /* Reduzi a largura máxima */
-  height: auto;
+  height: flex;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -195,6 +195,12 @@ object-fit: cover; /* Garante que a imagem cubra o container sem distorção */
   box-sizing: border-box;
   text-align: center;
   margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .pet-card {
+    max-width: 19%; /* Aumenta a largura máxima em telas maiores */
+  }
 }
 
 .pet-card:hover {
