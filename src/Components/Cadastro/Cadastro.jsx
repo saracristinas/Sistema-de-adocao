@@ -21,30 +21,31 @@ const Cadastro = () => {
   const [phone, setPhone] = useState("");
   const navigate = useNavigate();
 
- // ======================= MÁSCARA DE CPF =======================
-const handleCpfChange = (e) => {
-  let value = e.target.value.replace(/\D/g, "").slice(0, 11); // Remove não números e limita a 11 dígitos
+  // ======================= MÁSCARA DE CPF =======================
+  const handleCpfChange = (e) => {
+    let value = e.target.value.replace(/\D/g, "").slice(0, 11); // Remove não números e limita a 11 dígitos
 
-  // Aplica a máscara 000.000.000-00 com uma expressão só
-  value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{0,2})/, (match, p1, p2, p3, p4) =>
-    `${p1}.${p2}.${p3}${p4 ? `-${p4}` : ""}`
-  );
+    // Aplica a máscara 000.000.000-00 com uma expressão só
+    value = value.replace(
+      /(\d{3})(\d{3})(\d{3})(\d{0,2})/,
+      (match, p1, p2, p3, p4) => `${p1}.${p2}.${p3}${p4 ? `-${p4}` : ""}`
+    );
 
-  setCpf(value);
-};
+    setCpf(value);
+  };
 
-// ======================= MÁSCARA DE TELEFONE =======================
-const handlePhoneChange = (e) => {
-  let value = e.target.value.replace(/\D/g, "").slice(0, 11); // Remove não números e limita a 11 dígitos
+  // ======================= MÁSCARA DE TELEFONE =======================
+  const handlePhoneChange = (e) => {
+    let value = e.target.value.replace(/\D/g, "").slice(0, 11); // Remove não números e limita a 11 dígitos
 
-  // Aplica a máscara (00) 00000-0000 ou (00) 0000-0000
-  value = value.replace(/^(\d{2})(\d{4,5})(\d{0,4})/, (match, ddd, meio, fim) =>
-    `(${ddd}) ${meio}${fim ? `-${fim}` : ""}`
-  );
+    // Aplica a máscara (00) 00000-0000 ou (00) 0000-0000
+    value = value.replace(
+      /^(\d{2})(\d{4,5})(\d{0,4})/,
+      (match, ddd, meio, fim) => `(${ddd}) ${meio}${fim ? `-${fim}` : ""}`
+    );
 
-  setPhone(value);
-};
-
+    setPhone(value);
+  };
 
   // Função que formata a primeira letra maiúscula do nome
   const capitalizeFirstLetter = (str) => {
@@ -102,13 +103,13 @@ const handlePhoneChange = (e) => {
     <div className="background-image">
       <div className="cadastro-wrapper">
         <div className="image-side">
-          <img src={patinhas} alt="Imagem de pets" style={{ width: "80%", maxWidth: "300px" }} />
+          <img src={patinhas} alt="Imagem de pets" className="pet-image" />
         </div>
-  
+
         <form onSubmit={handleSubmit}>
           <h1>Cadastre-se!</h1>
           <h3>Os pets estão esperando</h3>
-  
+
           <div className="input-field">
             <input
               type="text"
@@ -118,7 +119,7 @@ const handlePhoneChange = (e) => {
             />
             <FaUser className="icon" />
           </div>
-  
+
           <div className="input-field">
             <input
               type="text"
@@ -129,7 +130,7 @@ const handlePhoneChange = (e) => {
             />
             <FaIdCard className="icon" />
           </div>
-  
+
           <div className="input-field">
             <input
               type="email"
@@ -139,7 +140,7 @@ const handlePhoneChange = (e) => {
             />
             <FaEnvelope className="icon" />
           </div>
-  
+
           <div className="input-field">
             <input
               type="tel"
@@ -150,7 +151,7 @@ const handlePhoneChange = (e) => {
             />
             <FaPhoneAlt className="icon" />
           </div>
-  
+
           <div className="input-field">
             <input
               type="password"
@@ -160,7 +161,7 @@ const handlePhoneChange = (e) => {
             />
             <FaLock className="icon" />
           </div>
-  
+
           <div className="input-field">
             <input
               type="password"
@@ -170,11 +171,11 @@ const handlePhoneChange = (e) => {
             />
             <FaLock className="icon" />
           </div>
-  
+
           <div className="button-field">
             <button type="submit">Cadastrar</button>
           </div>
-  
+
           <div className="login-link">
             <p>
               Já tem uma conta? <Link to="/login">Login</Link>
@@ -184,7 +185,6 @@ const handlePhoneChange = (e) => {
       </div>
     </div>
   );
-  
 };
 
 export default Cadastro;
