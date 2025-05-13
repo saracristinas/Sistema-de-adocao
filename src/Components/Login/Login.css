@@ -34,20 +34,22 @@
   flex: 1;
   background-color: #9BA289;
   display: flex;
-  justify-content: flex-end; /* Alinha o conteúdo à direita */
+  justify-content: center;
   align-items: center;
   width: 300px;
   height: 200px;
-  padding: 0;
+  padding: 0%;
+  position: relative; /* Define a div pai como ponto de referência */
 }
 
 .image-side img {
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain; 
+  object-fit: contain; /* Ou cover */
   position: absolute; /* Permite posicionamento absoluto dentro da div pai */
-  top: 23%; /* Centraliza verticalmente */
-  right: 31%; /* Ajuste a posição da imagem */
+  right: 0;
+  bottom: 0;
+  /* Você pode ajustar top, right, bottom, left conforme necessário */
 }
 @media (max-width: 768px) {
   .image-side img {
