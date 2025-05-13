@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "./Login.css";
 import axios from "axios";
-import dogloginImage from "../../assets/dog-coitado.svg";
+import dogloginImage from "../../assets/dog-coitado1.png"
 
 
 const Login = () => {

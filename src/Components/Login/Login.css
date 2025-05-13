@@ -42,12 +42,13 @@
 }
 
 .image-side img {
-  max-width: 100%;
+  width: 500px;
+  max-width: 200%;
   max-height: 100%;
-  object-fit: contain; 
-  position: absolute; /* Permite posicionamento absoluto dentro da div pai */
+  position: static; /* Permite posicionamento absoluto dentro da div pai */
   top: 23%; /* Centraliza verticalmente */
-  right: 31%; /* Ajuste a posição da imagem */
+  right: 100%; /* Ajuste a posição da imagem */
+  padding: 0;
 }
 @media (max-width: 768px) {
   .image-side img {
