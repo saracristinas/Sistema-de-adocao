@@ -103,6 +103,9 @@ const Cadastro = () => {
     <div className="background-image">
       <div className="cadastro-wrapper">
         <div className="image-side">
+          <p className="pet-caption">
+            Seu pet não entende de cadastro, mas vai adorar que você fez!
+          </p>
           <img src={dogcadastro} alt="Imagem de metade de rosto de cachorro" className="pet-image" />
         </div>
 

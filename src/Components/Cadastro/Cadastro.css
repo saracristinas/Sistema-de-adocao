@@ -28,41 +28,76 @@ html {
   overflow: hidden;
   max-width: 900px;
   width: 100%;
-  align-items: stretch; /* já está aqui, isso é essencial */
-  height: 100%; /* <-- Adicione esta linha */
-  min-height: 600px; /* opcional, garante altura mínima */
+  align-items: stretch;
+  height: 100%;
+  min-height: 600px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* ===== LADO DA IMAGEM ===== */
 .image-side {
-    flex: 1;
-    background-color: #9ba289;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    padding: 40px; /* eu adicionei isso para que a imagem da esquerda, fique igual a imagem do formulario*/
+  flex: 1;
+  background-color: #9ba289;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  padding: 40px;
+  position: relative;
+}
 
-  .pet-image {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    position: absolute;
-    right: 0;
-    bottom: 0;
+.pet-caption {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 0 1.5rem;
+  color: #fff; /* Cor mais neutra e legível */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  animation: float 4s ease-in-out infinite, glow 1.5s ease-in-out infinite alternate;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.6), 0 0 10px rgba(255, 255, 255, 0.4); /* Brilho mais suave */
+}
+
+/* Animação de flutuação mais suave */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
 
-/* ===== FORMULÁRIO ===== */
-
-.cadastro-form-container {
-    padding: 1rem 2rem;
-    box-shadow: 5px 5px 15px rgb(0 0 0 / 0%);
-    width: 100%;
-    max-width: 500px;
+/* Animação de brilho com efeito mais sutil */
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.6), 0 0 10px rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.7);
+  }
+  100% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.6), 0 0 10px rgba(255, 255, 255, 0.4);
+  }
 }
 
+/* ===== EFEITO DE HOVER SOBRE O TEXTO ===== */
+.pet-caption:hover {
+  transform: scale(1.05) rotate(-2deg); /* Aumento suave */
+  transition: all 0.3s ease;
+}
+
+/* ===== FORMULÁRIO ===== */
+.cadastro-form-container {
+  padding: 1rem 2rem;
+  box-shadow: 5px 5px 15px rgb(0 0 0 / 0%);
+  width: 100%;
+  max-width: 500px;
+}
 
 form {
   flex: 1;
@@ -70,7 +105,7 @@ form {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 0px; /* eu adicionei isso para que a imagem da direita, fique igual a imagem da esquerda*/
+  padding: 0px;
   box-sizing: border-box;
 }
 
@@ -201,17 +236,19 @@ h3 {
     padding: 12px;
   }
 }
+
 @media screen and (max-height: 650px) {
   form {
     overflow-y: auto;
     max-height: 90vh;
   }
 }
+
 @media screen and (max-width: 768px) {
-    .cadastro-form-container {
-        padding: 2rem;
-        width: 100%;
-        background-color: #E8E4DB;
-        border-radius: 10px;
-    }
+  .cadastro-form-container {
+    padding: 2rem;
+    width: 100%;
+    background-color: #E8E4DB;
+    border-radius: 10px;
   }
+}
