@@ -56,7 +56,7 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 60px; /* eu adicionei isso para que a imagem da direita, fique igual a imagem da esquerda*/
   box-sizing: border-box;
 }
