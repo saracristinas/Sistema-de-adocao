@@ -36,29 +36,33 @@ html {
 
 /* ===== LADO DA IMAGEM ===== */
 .image-side {
-  flex: 1;
-  background-color: #9ba289;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: auto;
-  padding: 40px; /* eu adicionei isso para que a imagem da esquerda, fique igual a imagem do formulario*/
+    flex: 1;
+    background-color: #9ba289;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 40px; /* eu adicionei isso para que a imagem da esquerda, fique igual a imagem do formulario*/
 
   .pet-image {
-    width: 100%;
-    max-width: 300px;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    position: absolute;
+    right: 0;
+    bottom: 0;
   }
 }
 
 /* ===== FORMULÁRIO ===== */
 
 .cadastro-form-container {
-  flex: 1;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    padding: 1rem 2rem;
+    box-shadow: 5px 5px 15px rgb(0 0 0 / 0%);
+    width: 100%;
+    max-width: 500px;
 }
+
 
 form {
   flex: 1;
@@ -82,7 +86,7 @@ form::-webkit-scrollbar-thumb {
 /* ===== TEXTOS ===== */
 h1 {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   font-size: 2rem;
   color: #776f6f;
 }

@@ -10,7 +10,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Cadastro.css";
-import patinhas from "../../assets/patinhas.webp";
+import dogcadastro from "../../assets/dog-cadastro.png"
 
 const Cadastro = () => {
   const [cpf, setCpf] = useState("");
@@ -103,7 +103,7 @@ const Cadastro = () => {
     <div className="background-image">
       <div className="cadastro-wrapper">
         <div className="image-side">
-          <img src={patinhas} alt="Imagem de pets" className="pet-image" />
+          <img src={dogcadastro} alt="Imagem de metade de rosto de cachorro" className="pet-image" />
         </div>
 
         <div className="cadastro-form-container">
